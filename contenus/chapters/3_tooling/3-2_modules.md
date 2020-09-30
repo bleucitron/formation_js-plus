@@ -132,12 +132,21 @@ On peut exporter des valeurs, des objets, des fonctions...
 
 ```js
 // export par défaut, n'a pas besoin de nom
+export default {
+  a: 1,
+  b: 2,
+};
+
+// marche aussi pour les fonctions
+
 export default function () {
-  // ....
+  console.log('Coucou');
 }
 
-export const maConst = 5; // export
+export const maConst = 5; // export secondaire
 ```
+
+**Il ne peut y avoir qu'un seul `export default` par module.**
 
 ### [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
 
