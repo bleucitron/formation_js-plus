@@ -180,7 +180,7 @@ Au final, tout n'est qu'une histoire de câbles.
 
 # _**À vos crayons !!!**_
 
-- Faire les exercices du fichier `/exos/1_mental_models/1-6_properties.md`
+- Faire les exercices du fichier `/exos/1-6_properties.md`
 
 ---
 
