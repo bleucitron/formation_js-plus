@@ -145,8 +145,8 @@ element.addEventListener('click', function (e) {
 
 # _**À vos claviers !!!**_
 
-- Ouvrir le dossier `/exos/2-5_dom`
+- Ouvrir le dossier `/exos/2-4_dom`
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [Asynchrone](./2-6_es6+.md)
+## À suivre: [Asynchrone](./2-5_async.md)

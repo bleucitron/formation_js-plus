@@ -125,4 +125,4 @@ const extrait = array.slice(2, 5); // [3, 4, 5]
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [Asynchrone](./2-4_async.md)
+## À suivre: [DOM](./2-4_dom.md)

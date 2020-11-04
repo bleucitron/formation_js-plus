@@ -159,7 +159,3 @@ Attention ! Métrique dangereuse !
 5. on lance le test, il passe
 
 ## Tests automatisés sur vrais navigateurs: [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
-
----
-
-## À suivre: [React](./react.md)

@@ -46,4 +46,4 @@ maFonctionDuFuture() // ok
 maFonctionDuFuture() // ok
 ```
 
-## À suivre: [Modules](./5-2_modules.md)
+## À suivre: [Modules](./3-2_modules.md)

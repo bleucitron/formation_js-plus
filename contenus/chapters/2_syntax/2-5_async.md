@@ -219,8 +219,8 @@ attendre();
 
 # _**À vos claviers !!!**_
 
-- Ouvrir le dossier `/exos/2-4_async`
+- Ouvrir le dossier `/exos/2-5_async`
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [Modules](./2-5_dom.md)
+## À suivre: [ES6+](./2-6_es6+.md)
