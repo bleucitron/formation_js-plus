@@ -16,13 +16,13 @@
 - #### [Assignations](./contenus/chapters/2_syntax/2-1_assignments.md)
 - #### [Fonctions](./contenus/chapters/2_syntax/2-2_functions.md)
 - #### [Tableaux](./contenus/chapters/2_syntax/2-3_arrays.md)
-- #### [Asynchrone](./contenus/chapters/2_syntax/2-4_async.md)
-- #### [DOM](./contenus/chapters/2_syntax/2-5_dom.md)
+- #### [DOM](./contenus/chapters/2_syntax/2-4_dom.md)
+- #### [Asynchrone](./contenus/chapters/2_syntax/2-5_async.md)
 - #### [ES6+](./contenus/chapters/2_syntax/2-6_es6+.md)
 
 ## 3. Outillage
 
-- #### [Retour vers le futur](./contenus/chapters/4_tooling/4-1_future.md)
-- #### [Modules](./contenus/chapters/4_tooling/4-2_modules.md)
-- #### [npm](./contenus/chapters/4_tooling/4-3_npm.md)
-- #### [Qualité](./contenus/chapters/4_tooling/4-4_quality.md)
+- #### [Retour vers le futur](./contenus/chapters/3_tooling/3-1_future.md)
+- #### [Modules](./contenus/chapters/3_tooling/3-2_modules.md)
+- #### [npm](./contenus/chapters/3_tooling/3-3_npm.md)
+- #### [Qualité](./contenus/chapters/3_tooling/3-4_quality.md)
