@@ -107,8 +107,26 @@ console.log(valeurPromise); // ERREUR: ici valeurPromise n'a pas de sens
 
 Une Promesse est un _thenable_, c'est-à-dire qu'on peut écrire `.then()` ou `.catch()` derrière. Mais `p.then()` ou `p.catch()` sont également eux-mêmes des Promesse. On peut donc chaîner les Promesses.
 
+`p.then().then().catch().then()...`
+
 ```js
-myP.then().then().catch().then()...
+maPromesse.then(function (vp1) {
+  console.log('VP1', vp1);
+
+  autreFonctionAsync(vp1).then(function (vp2) {
+    console.log('VP2', vp2);
+  });
+});
+
+// Mieux
+maPromesse
+  .then(function (vp1) {
+    console.log('VP1', vp1);
+    return autreFonctionAsync(vp1);
+  })
+  .then(function (vp2) {
+    console.log('VP2', vp2);
+  });
 ```
 
 ### Synchroniser
@@ -160,12 +178,15 @@ Pour obtenir la donnée que l'on attend à partir de la réponse, on peut utilis
 - `.json()`: si la donnée est du JSON, le transforme
 
 ```js
-async function attendre() {
-  const maReponse = await fetch('urlVersUnePage');
-  console.log('maReponse', maReponse); // ceci n'est pas ma donnée, mais la réponse HTTP
-  const maDonnee = await maReponse.json(); // .json() crée une promesse de lire le flux et de l'interprêter comme du JSON
-  console.log('maDonnee', maDonnee); // ceci est ma donnée
-}
+fetch('urlVersUnePage')
+  .then(function (maReponse) {
+    console.log('maReponse', maReponse); // ceci n'est pas ma donnée, mais la réponse HTTP
+
+    return maReponse.json(); // .json() crée une promesse de lire le flux et de l'interprêter comme du JSON
+  })
+  .then(function (maDonnee) {
+    console.log('maDonnee', maDonnee); // ceci est ma donnée
+  });
 ```
 
 ## `async` / `await`
