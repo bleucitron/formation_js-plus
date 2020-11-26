@@ -19,9 +19,7 @@ document.addEventListener(
 
         // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
 
-        // créer et ajouter un <button> qui quand on clique dessus affiche 'click' dans la console.
-
-        // [3] modifier le bouton pour que quand on clique dessus, ne garde que les tweets en français
+        // [3] créer un <bouton> de filtre pour que quand on clique dessus, ne garde que les tweets en français à l'écran
 
         // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
 
