@@ -1,5 +1,12 @@
 'use strict';
 
+function createLi(tweet) {
+  const li = document.createElement('li');
+  li.textContent = tweet.full_text;
+
+  return li;
+}
+
 document.addEventListener(
   'DOMContentLoaded',
   function () {
@@ -13,15 +20,43 @@ document.addEventListener(
         console.log('Le tableau de tweet', tweets);
 
         // ### Projet Touitter ###
-        // Attention: toucher au DOM coûte cher, utiliser le moins possible les APIs du DOM
+        let firstOl = document.createElement('ol');
+        document.body.append(firstOl);
 
-        // [1] créer une fonction createLi(), qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        tweets.forEach(function (t) {
+          const li = createLi(t);
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+          firstOl.append(li);
+        });
 
-        // [3] créer un <bouton> de filtre pour que quand on clique dessus, ne garde que les tweets en français à l'écran
+        const bouton = document.createElement('button');
+        bouton.textContent = 'Filtrer';
 
-        // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+        document.body.prepend(bouton);
+
+        let isFr = false;
+
+        bouton.addEventListener('click', function () {
+          isFr = !isFr;
+
+          let displayedTweets = tweets;
+
+          if (isFr) {
+            displayedTweets = tweets.filter(function (tw) {
+              return tw.lang === 'fr';
+            });
+          }
+
+          const newOl = document.createElement('ol');
+
+          displayedTweets.forEach(function (t) {
+            const li = createLi(t);
+
+            newOl.append(li);
+          });
+          firstOl.replaceWith(newOl);
+          firstOl = newOl;
+        });
 
         /* [5] créer une fonction createOl(), qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
     et l'utiliser à [2], [3], [4] */
