@@ -171,6 +171,24 @@ console.log(pokemons.pikachu);
 
 **Les modules sont par défaut en mode strict !**
 
+### Utiliser un module
+
+Pour pouvoir utiliser un script de type module dans le HTML, il faut l'insérer dans un `<script>` de type `"module"`.
+
+Toutes les dépendances d'un script `"module"` seront directement importées en suivant l'arbre de dépendances construit avec les différents `import` et `export`.
+
+**Lorsque l'on utilise les modules, il faut impérativement servir sa page depuis un serveur HTTP (et non depuis le protocole `file://`).**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="code1.js" type="module"></script>
+  </head>
+  <body></body>
+</html>
+```
+
 ## Bundling
 
 On "compile" tout le code en 1 seul (gros) fichier bien construit pour le charger dans le Html.
