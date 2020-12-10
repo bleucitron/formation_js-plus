@@ -5,5 +5,23 @@ h1 {
 }
 
 .tweet {
-  margin: 1rem;
+  margin: 2rem 1.5rem;
+}
+
+.text {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.infos {
+  display: flex;
+}
+
+.date {
+  font-style: italic;
+}
+
+.author {
+  margin-right: 1rem;
+  text-decoration: underline;
 }
