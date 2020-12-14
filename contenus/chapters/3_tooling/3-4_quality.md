@@ -1,7 +1,5 @@
 # Qualité de code
 
-## [Typescript](./typescript.md)
-
 ## Linting
 
 Sert à écrire du code propre, selon les conventions que l'on choisit.
@@ -124,6 +122,20 @@ Créer des tests pour la fonction `createOl`:
 
 Créer des tests pour la fonction `createLi`.
 
+### Code coverage
+
+Attention ! Métrique dangereuse !
+
+### Tests de non-régression
+
+1. on a observé un bug
+2. on écrit un test qui décrit le comportement correct
+3. on lance le test, il échoue
+4. on corrige le bug
+5. on lance le test, il passe
+
+### Tests automatisés sur vrais navigateurs: [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
+
 ## Automatisation
 
 On veut s'assurer que les tests sont lancés systématiquement.
@@ -146,16 +158,4 @@ npm i husky lint-staged --save-dev
 }
 ```
 
-## Code coverage
-
-Attention ! Métrique dangereuse !
-
-## Tests de non-régression
-
-1. on a observé un bug
-2. on écrit un test qui décrit le comportement correct
-3. on lance le test, il échoue
-4. on corrige le bug
-5. on lance le test, il passe
-
-## Tests automatisés sur vrais navigateurs: [Karma](https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai)
+## Typescript (TODO)

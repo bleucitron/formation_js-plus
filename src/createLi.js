@@ -2,9 +2,9 @@ import moment from 'moment';
 
 export default function (tweet) {
   const {
-    full_text,
+    full_text: text,
     user: { name },
-    created_at,
+    created_at: createdAt,
   } = tweet;
 
   const li = document.createElement('li');
@@ -13,8 +13,8 @@ export default function (tweet) {
   const authorDiv = document.createElement('div');
   const infosDiv = document.createElement('div');
 
-  textDiv.textContent = full_text;
-  dateDiv.textContent = moment(created_at).fromNow();
+  textDiv.textContent = text;
+  dateDiv.textContent = moment(createdAt).fromNow();
   authorDiv.textContent = name;
 
   textDiv.classList.add('text');

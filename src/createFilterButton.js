@@ -1,4 +1,5 @@
 import createOl from './createOl.js';
+import { checkFr } from './utils.js';
 
 export default function (twts, ol) {
   const filterButton = document.createElement('button');
@@ -12,8 +13,7 @@ export default function (twts, ol) {
     let displayedTweets = twts;
 
     if (isFr) {
-      displayedTweets = twts.filter(t => t.lang === 'fr');
-      // displayedTweets = twts.filter(({ lang }) => lang === 'fr');
+      displayedTweets = twts.filter(checkFr);
     }
 
     const newOl = createOl(displayedTweets);
