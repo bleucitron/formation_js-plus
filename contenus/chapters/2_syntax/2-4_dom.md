@@ -26,6 +26,8 @@ n.remove();
 n.replaceWith(n2);
 ```
 
+Les noeuds qui ne sont pas accrochés directement ou indirectement au `body` n'apparaitront pas à l'écran.
+
 ## [Document](https://developer.mozilla.org/fr/docs/Web/API/Document)
 
 Le document est un noeud spécial.
@@ -38,6 +40,7 @@ document.body; // renvoie le body
 const maDiv = document.createElement('div'); // crée une div orpheline
 const monSvg = document.createElementNS('http://www.w3.org/2000/svg', 'g'); // pour le SVG
 
+const elementWithId = document.getElementById('myId'); // renvoie l'élément avec l'id myId
 const found = document.querySelector(selector); // renvoie le premier élément correspondant de la page
 const founds = document.querySelectorAll(selector); // renvoie un iterateur avec tous les éléments de la page correspondant
 ```
@@ -51,6 +54,9 @@ Il existe notamment des `HTMLElement`, des `SVGElement`, etc...
 ### Modifier un élément
 
 ```js
+e.id // récupère l'id
+e.width // récupère la width
+a.href // récupère le href
 e.getAttribute(key);
 a.getAttribute('href');
 e.setAttribute(key, value);
@@ -90,7 +96,7 @@ Il y a toutefois des cas, rares, où vous n'avez pas d'autres choix que le style
 
 ## [EventTarget](https://developer.mozilla.org/fr/docs/Web/API/EventTarget)
 
-Tout est un `EventTarget`. Un `EventTarget` écoute les évènements qui se produise sur lui-même, et réagit si on lui a donné un `listener` (une fonction).
+Tout est un `EventTarget`. Un `EventTarget` écoute les évènements qui se produisent sur lui-même, et réagit si on lui a donné un `listener` (une fonction).
 
 ```js
 n.addEventListener(type, listener, options); // si l'évèvement type se produit sur n, alors exécute listener, avec des options
@@ -112,7 +118,7 @@ Ils sont uniques par élément.
 ## [Evènements](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 - `DOMContentLoaded`
-  - Quand le HTML est chargée et que l'arbre DOM est construit
+  - Quand le HTML est chargé et que l'arbre DOM est construit
 - `load`
   - Quand la page entière est chargée (CSS, fonts, images, etc.)
 - `click`, `mousedown`, `mouseup`, `dblclick`
@@ -126,18 +132,20 @@ Ils sont uniques par élément.
 
 ### Event properties
 
-Quand un évènement est généré, il possède des propriétés, qui sont fournies par `addEventListener()` en argument `e` du listener.
+Quand un évènement est généré, il possède des propriétés, qui sont fournies par `addEventListener()` en argument `event` du listener.
 
 ```js
-element.addEventListener('click', function (e) {
-  e.target; // renvoie l'élément qui a généré l'évènement
-  e.currentTarget; // renvoie l'élément courant lors de la traversée du DOM
-  e.timestamp; // renvoie la date de l'évènement en ms depuis le chargement de la page
-  e.preventDefault(); // empêche les comportements par défaut
-  e.clientX; // renvoie la position X de la souris
-  e.clientY; // renvoie la position Y de la souris
-  e.bubbles; // renvoie true si l'évènement remonte l'arbre, false s'il descend
-  e.stopPropagation(); // arrête la propagation de l'évènement
+element.addEventListener('click', function (event) {
+  event.target; // renvoie l'élément qui a généré l'évènement
+  event.currentTarget; // renvoie l'élément courant lors de la traversée du DOM
+  event.timestamp; // renvoie la date de l'évènement en ms depuis le chargement de la page
+  event.preventDefault(); // empêche les comportements par défaut
+  event.bubbles; // renvoie true si l'évènement remonte l'arbre, false s'il descend
+  event.stopPropagation(); // arrête la propagation de l'évènement
+
+  // pour les évènements de souris
+  event.clientX; // renvoie la position X de la souris
+  event.clientY; // renvoie la position Y de la souris
 });
 ```
 
