@@ -96,4 +96,4 @@ et rajouter un `.babelrc` à la racine du projet
 
 Pour gérer la taille de ses paquets.
 
-## À suivre: [Qualité](./3-4_quality.md)
+#### _La suite: [Qualité](./3-4_quality.md)_

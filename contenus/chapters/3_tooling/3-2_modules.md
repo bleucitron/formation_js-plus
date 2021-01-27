@@ -269,4 +269,4 @@ import moment from 'moment';
 // ...
 ```
 
-## À suivre: [NPM](./3-3_npm.md)
+#### _La suite: [NPM](./3-3_npm.md)_

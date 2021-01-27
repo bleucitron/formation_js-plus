@@ -244,4 +244,4 @@ attendre();
 - Ouvrir le fichier `index.html` dans votre navigateur
 - Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
 
-## À suivre: [ES6+](./2-6_es6+.md)
+#### _La suite: [ES6+](./2-6_es6+.md)_

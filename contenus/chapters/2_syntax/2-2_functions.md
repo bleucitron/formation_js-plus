@@ -108,4 +108,4 @@ Elles possèdent 2 avantages:
 });
 ```
 
-## À suivre: [Tableaux](./2-3_arrays.md)
+#### _La suite: [Tableaux](./2-3_arrays.md)_

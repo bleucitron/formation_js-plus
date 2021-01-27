@@ -102,4 +102,4 @@ var o = { a: 1, a: 2 } // ERROR
 
 [Pourquoi il ne faut assigner une variable sans l'avoir déclarée ?](http://www.pixelstech.net/article/1320253282-How-One-Missing-%60var%60-Ruined-our-Launch)
 
-## À suivre: [Fonctions](./2-2_functions.md)
+#### _La suite: [Fonctions](./2-2_functions.md)_
