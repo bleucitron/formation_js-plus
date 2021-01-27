@@ -6,11 +6,11 @@ Assigner pour la première fois une variable crée le câble.
 
 Réassigner une variable déplace le bout du câble d'une valeur vers une autre.
 
-- `let a = 1;`
-- `a = a + 5;`
-  - `a += 5;`
-- `a = a + 1;`
-  - `a++;`
+Historiquement, on assigne avec le mot-clé `var`:
+
+```js
+var a = 1;
+```
 
 ## Oublier `var`
 
@@ -54,6 +54,8 @@ console.log(c); // 3
 
 ## `const` ou `let` ?
 
+`const` crée une variable **constante**, qui ne pourra jamais être réassignée.
+
 ```js
 const a = 1;
 let b = 2;
@@ -72,7 +74,7 @@ romain.favoriteMovie = 'Les Tuche 2';
 romain = { favoriteMovie: 'Les Tuche 3' }; // Error
 ```
 
-### [Mode strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+## [Mode strict](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 Historiquement, Javascript est doté de largesses bien connues pouvant mener à des mauvaises habitudes, voire à des bugs.
 
