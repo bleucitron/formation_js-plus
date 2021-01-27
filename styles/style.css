@@ -7,3 +7,19 @@ h1 {
 .tweet {
   margin: 1rem;
 }
+
+.text {
+  font-size: 1.5rem;
+}
+
+.date {
+  font-style: italic;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.hashtag {
+  color: red;
+}

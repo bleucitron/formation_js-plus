@@ -14,32 +14,52 @@ document.addEventListener(
       .then(function (tweets) {
         console.log('Le tableau de tweet', tweets);
 
-        console.log('--- Question 1 ---');
-        /* pour le premier tweet
-          - créer une div
-          - lui fournir le texte du tweet en textContent
-          - ajouter la div au <body>
-        */
+        const first = document.createElement('div');
+        first.textContent = tweets[0].full_text;
+        document.body.append(first);
 
-        console.log('--- Question 2 ---');
-        // créer un <ol> et remplacer la <div> par le <ol>
+        const ol = document.createElement('ol');
+        first.replaceWith(ol);
 
         console.log('--- Question 3 ---');
-        /* pour chaque tweet
-          - créer un <li>
-          - mettre le texte dedans
-          - mettre le <li> dans le <ol>
-        */
 
-        console.log('--- Question 4 ---');
-        /* enrichir la fonction de la question 3 pour:
-          - ajouter des infos d'auteur et de date
-          - ajouter des classes pourt styliser le texte, l'auteur, la date
-          - ajouter un listener au clic ou mouseenter pour logguer l'id du tweet dans la console
-        */
+        tweets.forEach(tweet => {
+          const li = document.createElement('li');
+          const text = document.createElement('div');
+          const author = document.createElement('div');
+          const date = document.createElement('div');
 
-        console.log('--- BONUS ---');
-        // enrichir la fonction de la question 3 pour aussi afficher les hashtags de chaque tweet
+          text.classList.add('text');
+          author.classList.add('author');
+          date.classList.add('date');
+          li.classList.add('tweet');
+
+          text.textContent = tweet.full_text;
+          author.textContent = tweet.user.name;
+          date.textContent = tweet.created_at;
+
+          const hElements = tweet.entities.hashtags.map(hashtag => {
+            const el = document.createElement('div');
+            el.textContent = '#' + hashtag.text;
+
+            el.classList.add('hashtag');
+
+            return el;
+          });
+
+          li.addEventListener('mouseenter', event => {
+            console.log(
+              'Tweet id',
+              tweet.id,
+              'at',
+              event.timeStamp / 1000,
+              's',
+            );
+          });
+
+          li.append(author, text, date, ...hElements);
+          ol.append(li);
+        });
       })
       .catch(function (e) {
         console.error(e);
