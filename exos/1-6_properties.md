@@ -9,23 +9,6 @@ Vous pouvez utiliser des outils comme [AWW](https://awwapp.com/#) ou [Miro](http
 ### 1)
 
 ```js
-let color = 'blue';
-let car = {
-  name: 'R5',
-  color: color,
-};
-
-for (let i = 0; i < 3; i++) {
-  car = {
-    name: 'R5',
-    color: 'yellow',
-  };
-}
-```
-
-### 2)
-
-```js
 let john = {
   name: 'lennon',
   address: {
@@ -41,7 +24,7 @@ let paul = {
 paul.address.city = 'london';
 ```
 
-### 3)
+### 2)
 
 ```js
 let griffindor = {
@@ -72,7 +55,7 @@ harry.house = {
 hermione.house.name = 'hufflepuff';
 ```
 
-### 4)
+### 3)
 
 ```js
 let knight = {
@@ -95,3 +78,5 @@ thief.weapon = {
   type: 'sword',
 };
 ```
+
+#### _La suite: [Syntaxe](../contenus/chapters/2_syntax/2-1_assignments.md)_

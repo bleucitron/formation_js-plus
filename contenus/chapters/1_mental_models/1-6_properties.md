@@ -131,7 +131,7 @@ salameche.owner.name = 'pierre';
 
 ⚠ Les objets ne sont jamais "inclus" (ou "nestés").
 
-**Muter un object**, c'est changer la direction d'un ou plusieurs de ses câbles.
+**Muter un objet**, c'est changer la direction d'un ou plusieurs de ses câbles.
 
 Muter un objet ajoute généralement de la confusion, car si l'objet en question est utilisé ailleurs, la mutation peut avoir des répercussions imprévues.
 
@@ -180,7 +180,7 @@ Au final, tout n'est qu'une histoire de câbles.
 
 # _**À vos crayons !!!**_
 
-- Faire les exercices du fichier `/exos/1-6_properties.md`
+- Faire les exercices du fichier [`/exos/1-6_properties.md`](../../../exos/1-6_properties.md)
 
 ---
 
