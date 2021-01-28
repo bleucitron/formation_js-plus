@@ -38,8 +38,8 @@ fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
     console.log('--- BONUS ---');
     /* Créer une Promesse qui:
           - crée un nombre aléatoire (delay) en 0 et 5000
+          - au bout de delay ms, résoudre le nombre delay
           - au bout de 2s, rejeter la Promesse avec le texte 'Trop long...'
-          - au bout de delay ms pour résoudre le nombre delay
           - consommer la Promesse de sorte que si elle est rejetée, on recommence jusqu'à ce qu'elle résolve
         */
   })
