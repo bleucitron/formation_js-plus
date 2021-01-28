@@ -164,9 +164,9 @@ Promise.allSettled([promesse1, promesse2]).then(function (tableauDesResultats) {
 });
 ```
 
-## `fetch()`
+## [`fetch`](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch)
 
-`fetch()` permet de requêter le réseau pour obtenir une réponse contenant de la donnée (une page web, ou autre);
+`fetch` permet de requêter le réseau pour obtenir une réponse contenant de la donnée (une page web, ou autre);
 
 **`fetch()` crée une Promesse d'avoir la réponse HTTP de notre requête**. Et non pas notre donnée telle quelle.
 
@@ -189,7 +189,7 @@ fetch('urlVersUnePage')
   });
 ```
 
-## `async` / `await`
+## [`async`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/async_function) / [`await`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/await)
 
 La syntaxe `async` / `await` permet d'écrire du code asynchrone comme s'il était synchrone, c'est-à-dire attendre la résolution d'une Promesse.
 
