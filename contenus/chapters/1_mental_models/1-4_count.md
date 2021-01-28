@@ -92,6 +92,39 @@ let happy = true;
 let sad = !happy;
 ```
 
+### Falsy values
+
+Les "falsy" values sont équivalentes à `false` dans les contextes booléens (en gros, dans les `if`):
+
+```js
+if (false)
+if (null)
+if (undefined)
+if (0)
+if (-0)
+if (0n)
+if (NaN)
+if ("")
+```
+
+Tout ce qui n'est pas "falsy" est "truthy".
+
+```js
+if ('') {
+  console.log('String vide'); // non exécutée
+}
+if (3) {
+  console.log('Le nombre trois'); // exécutée
+}
+```
+
+On peut transformer une valeur en "vrai" booléen avec `!!`:
+
+```js
+const a = !!null; // false
+const b = !!4; // true
+```
+
 ## Nombre
 
 `1`, `2`, `2.5`, `2.75`, ... `3`
