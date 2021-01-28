@@ -1,5 +1,7 @@
 'use strict';
 
+console.log('Exos DOM');
+
 document.addEventListener(
   'DOMContentLoaded',
   function () {
