@@ -193,12 +193,21 @@ Toutes les dépendances d'un script `"module"` seront directement importées en 
 
 On "compile" tout le code en 1 seul (gros) fichier bien construit pour le charger dans le Html.
 
+On en profite souvent pour faire des opérations de compilation, d'optimisations, d'analyse:
+
+- transpilation
+- minification
+- uglification
+- tree shaking
+- ...
+
 Il y a plusieurs alternatives disponibles.
 
 - [`browserify`](http://browserify.org/)
 - [`webpack`](https://webpack.js.org/)
 - [`rollup`](https://rollupjs.org/guide/en)
 - [`parcel`](https://parceljs.org/)
+- [`vite`](https://vitejs.dev/)
 
 Ces outils nécessitent de travailler dans un environnement Node, puis de transformer le code Node en un code compatible navigateur.
 
@@ -208,7 +217,7 @@ Pour utiliser ces outils, il faut donc [installer Node](https://nodejs.org/en/) 
 
 # **_À vos claviers !!!_**
 
-On va utiliser [`browserify`](http://browserify.org/).
+On va utiliser [`browserify`](http://browserify.org/), qui n'est certes plus tellement utilisé, mais qui permet assez simplement de comprendre ce qu'il se passe.
 
 ### Étape 1: [installer NodeJS](https://nodejs.org/en/)
 
