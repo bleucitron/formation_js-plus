@@ -1,31 +1,71 @@
 'use strict';
 
+function getJson() {
+  return fetch(
+    'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json',
+  ).then(function (resp) {
+    return resp.json();
+  });
+}
+
 console.log('Exos Asynchrone');
 
-fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
-  .then(function (resp) {
-    return resp.json();
-  })
+getJson(
+  'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json',
+)
   .then(function (tweets) {
+    function getTweet(i) {
+      return new Promise(resolve => {
+        setTimeout(function () {
+          resolve(tweets[i]);
+        }, 3000);
+      });
+    }
+
     console.log('Le tableau de tweet', tweets);
 
-    // Asynchrone
-
     console.log('--- Question 1 ---');
-    /* créer une Promesse qui renvoie un nombre aléatoire entre 0 et 99 au bout de 2 secondes.
-            Si ce nombre est pair, le résoudre, sinon le rejeter.
 
-            Utiliser setTimeout().
-        */
+    const nbPromesse = new Promise(function (res, rej) {
+      const nb = Math.floor(Math.random() * 100);
+
+      setTimeout(function () {
+        if (nb % 2 === 0) res(nb);
+        else rej(nb + ' est impair');
+      }, 2000);
+    });
 
     console.log('--- Question 2 ---');
-    /* Consommer la Promesse de 1) pour
-            - afficher le texte du tweet correspondant au nombre renvoyé quand elle résoud
-            - logguer un message d'erreur expliquant que le nombre est incorrect quand elle est rejetée
-        */
+
+    nbPromesse
+      .then(function (nb) {
+        const tweetPromise = getTweet(nb);
+        return tweetPromise;
+      })
+      .then(function (tweet) {
+        console.log('Tweet', tweet);
+      })
+      .catch(function (erreur) {
+        console.error(erreur);
+      });
+
+    nbPromesse.then(function (n) {
+      console.log('dsadasdsadadasdsada', n);
+    });
 
     console.log('--- Question 3 ---');
-    // Même chose que la 2), mais avec async/await
+
+    async function waitForNumber() {
+      try {
+        const nb = await nbPromesse;
+        const tweet = await getTweet(nb);
+
+        console.log('Nb', nb, tweet);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    waitForNumber();
 
     console.log('--- Question 4 ---');
     /* Écrire une fonction getJson() qui prend une URL en entrée,

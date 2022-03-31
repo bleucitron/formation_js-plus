@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('Exos Syntaxe');
-
 fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
   .then(function (resp) {
     return resp.json();

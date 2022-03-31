@@ -7,3 +7,15 @@ h1 {
 .tweet {
   margin: 1rem;
 }
+
+.text {
+  font-size: 1.3rem
+}
+
+.author {
+  color: lightblue
+}
+
+.date {
+  font-style: italic
+}

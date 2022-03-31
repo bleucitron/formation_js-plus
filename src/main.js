@@ -1,5 +1,20 @@
 'use strict';
 
+function createLi(tweet) {
+  const li = document.createElement('li');
+  li.textContent = tweet.full_text;
+
+  return li;
+}
+function createOl(tweets) {
+  const ol = document.createElement('ol');
+  tweets.forEach(function (tweet) {
+    const li = createLi(tweet);
+    ol.append(li);
+  });
+  return ol;
+}
+
 document.addEventListener(
   'DOMContentLoaded',
   function () {
@@ -11,20 +26,32 @@ document.addEventListener(
       })
       .then(function (tweets) {
         console.log('Le tableau de tweet', tweets);
+        const body = document.body;
 
-        // ### Projet Touitter ###
-        // Attention: toucher au DOM coûte cher, utiliser le moins possible les APIs du DOM
+        let displayedOl = createOl(tweets);
 
-        // [1] créer une fonction createLi(), qui pour un tweet en entrée, crée et retourne un <li> contenant le texte du tweet
+        const button = document.createElement('button');
+        button.textContent = 'To FR';
 
-        // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
+        let isFr = false;
 
-        // [3] créer un <bouton> de filtre pour que quand on clique dessus, ne garde que les tweets en français à l'écran
+        button.addEventListener('click', function () {
+          const tweetsToDisplay = isFr
+            ? tweets
+            : tweets.filter(function (tweet) {
+                return tweet.lang === 'fr';
+              });
 
-        // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
+          const newOl = createOl(tweetsToDisplay);
 
-        /* [5] créer une fonction createOl(), qui pour un tableau tweets en entrée, crée et retourne un <ol> rempli de <li>
-    et l'utiliser à [2], [3], [4] */
+          displayedOl.replaceWith(newOl);
+          displayedOl = newOl;
+
+          isFr = !isFr;
+        });
+
+        body.append(button);
+        body.append(displayedOl);
 
         /* [6] Créer un bouton qui, quand on clique dessus:
             - active le tracking de la souris: la console affiche position de la souris (event.clientX, event.clientY) quand la souris bouge
