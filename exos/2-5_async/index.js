@@ -26,12 +26,12 @@ getJson(
 
     console.log('--- Question 1 ---');
 
-    const nbPromesse = new Promise(function (res, rej) {
+    const nbPromesse = new Promise(function (resolve, reject) {
       const nb = Math.floor(Math.random() * 100);
 
       setTimeout(function () {
-        if (nb % 2 === 0) res(nb);
-        else rej(nb + ' est impair');
+        if (nb % 2 === 0) resolve(nb);
+        else reject(new Error(nb + ' est impair'));
       }, 2000);
     });
 

@@ -1,82 +1,67 @@
-'use strict';
+import getJson from './getJson.js';
+import createOl from './createOl.js';
+import createTrackingButton from './createTrackingButton.js';
+import createFilterButton from './createFilterButton.js';
 
-function createLi(tweet) {
-  const li = document.createElement('li');
-  li.textContent = tweet.full_text;
+function createUser(user) {
+  const profile = document.createElement('a');
+  profile.href = user.url;
 
-  return li;
+  const img = document.createElement('img');
+  img.src = user.profile_image_url;
+  const name = document.createElement('div');
+  name.textContent = user.name;
+  name.classList.add('name');
+  const screenName = document.createElement('div');
+  screenName.textContent = '@' + user.screen_name;
+  screenName.classList.add('screen-name');
+
+  profile.append(img, name, screenName);
+
+  profile.classList.add('profile');
+  return profile;
 }
-function createOl(tweets) {
-  const ol = document.createElement('ol');
-  tweets.forEach(function (tweet) {
-    const li = createLi(tweet);
-    ol.append(li);
-  });
-  return ol;
-}
+
+const urls = [
+  'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json',
+  'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets2.json',
+];
+
+const allTweetsP = Promise.all(urls.map(getJson));
 
 document.addEventListener(
   'DOMContentLoaded',
   function () {
-    fetch(
-      'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json',
-    )
-      .then(function (resp) {
-        return resp.json();
-      })
+    allTweetsP
       .then(function (tweets) {
+        tweets = tweets.flat();
+
+        const users = tweets.reduce((acc, current) => {
+          const user = current.user;
+          const screenName = user.screen_name;
+          if (!acc.find(user => user.screen_name === screenName)) {
+            acc.push(user);
+          }
+          return acc;
+        }, []);
+
         console.log('Le tableau de tweet', tweets);
-        const body = document.body;
+        console.log('Les users', users);
 
-        let displayedOl = createOl(tweets);
+        const displayedOl = createOl(tweets);
+        const trackingButton = createTrackingButton();
+        const filterButton = createFilterButton(tweets);
 
-        const button = document.createElement('button');
-        button.textContent = 'To FR';
+        const userDivs = users.map(createUser);
 
-        let isFr = false;
+        const profiles = document.createElement('div');
+        profiles.classList.add('list');
+        profiles.append(...userDivs);
 
-        button.addEventListener('click', function () {
-          const tweetsToDisplay = isFr
-            ? tweets
-            : tweets.filter(function (tweet) {
-                return tweet.lang === 'fr';
-              });
-
-          const newOl = createOl(tweetsToDisplay);
-
-          displayedOl.replaceWith(newOl);
-          displayedOl = newOl;
-
-          isFr = !isFr;
-        });
-
-        body.append(button);
-        body.append(displayedOl);
-
-        /* [6] Créer un bouton qui, quand on clique dessus:
-            - active le tracking de la souris: la console affiche position de la souris (event.clientX, event.clientY) quand la souris bouge
-            - désactive le tracking quand on reclique dessus
-        */
-
-        /* [7] créer une fonction qui crée et renvoie le bouton de filtre.
-          Cette fonction doit contenir toute la logique liée au filtre.
-          Utiliser cette fonction pour remplacer le code de création du bouton de filtre.
-        */
-
-        // [8] Utiliser la fonction getJson() pour charger les tweets à la place des lignes 6 à 11
-
-        /* [9] Utiliser Promise.all() pour charger également les tweets de cette url :
-          'https://raw.githubusercontent.com/iOiurson/formation/correction/data/tweets2.json'
-        */
-
-        // ### BONUS : LOCALSTORAGE ###
-
-        // [1] Rajouter un bouton "fav" à chaque li
-
-        /* [2] quand le bouton est cliqué, changer le style du li (rajouter une classe 'fav')
-      + et stocker l'ensemble des id_str fav dans le localStorage */
-
-        // [3] au chargement de la page, lire le localStorage pour favoriser les favoris.
+        document.body.append(trackingButton);
+        document.body.append(filterButton);
+        document.body.append(profiles);
+        document.body.append(displayedOl);
       })
       .catch(function (e) {
         console.error(e);

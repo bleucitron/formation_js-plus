@@ -19,3 +19,33 @@ h1 {
 .date {
   font-style: italic
 }
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 5rem 0
+}
+
+.profile {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+}
+
+.profile img {
+  width: 7rem;
+  border-radius: 50%;
+}
+
+.profile .name {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.profile .screen-name {
+  font-style: italic;
+  font-size: 1.2rem;
+}

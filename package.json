@@ -1,0 +1,45 @@
+{
+  "name": "js_plus",
+  "version": "1.0.0",
+  "description": "## 0. [Un peu d'histoire](./contenus/chapters/0_history/index.md)",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify src/main.js -o bundle.js -t [ babelify ] -d",
+    "watch": "watchify src/main.js -o bundle.js -t [ babelify ] -d -v",
+    "lint": "eslint .",
+    "test": "jest .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iOiurson/formation_js-plus.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iOiurson/formation_js-plus/issues"
+  },
+  "homepage": "https://github.com/iOiurson/formation_js-plus#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
+}
