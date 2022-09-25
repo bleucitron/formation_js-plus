@@ -83,7 +83,10 @@ Certaines de ces largesses sont considérées comme de très mauvaises pratiques
 ```js
 a = 1; // mauvaise idée
 var undefined = 1; // mauvaise idée
-var o = { a: 1, a: 2 }; // mauvaise idée
+
+function somme(a, a, c) { // mauvaise idée
+  return a + b + c;
+}
 ```
 
 Plutôt que supprimer ces comportements, on rajoute des garde-fous.
@@ -95,7 +98,9 @@ Le mode strict permet de se prémunir de ces comportements proscrits. On l'activ
 
 a = 1; // ERROR
 var undefined = 1; // ERROR
-var o = { a: 1, a: 2 } // ERROR
+function somme(a, a, c) { // ERROR
+  return a + b + c;
+}
 
 ...
 ```
