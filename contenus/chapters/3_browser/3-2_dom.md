@@ -156,12 +156,4 @@ e.classList.contains('class1');
 
 ---
 
-## Exercices
-
-- Ouvrir le dossier `/exos/3_browser/3-2_dom`
-- Ouvrir le fichier `index.html` dans votre navigateur
-- Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
-
----
-
 ### _À suivre: [Évènements](./3-3_events.md)_

@@ -92,13 +92,4 @@ const saluer = () => {
 
 ---
 
-## Exos
-
-- Ouvrir le dossier `/exos/2_syntax/2-4_functions`
-- Ouvrir le fichier `index.html` dans votre navigateur
-- Suivre les indications du fichier `.js`, et vérifier les résultats dans
-  votre navigateur
-
----
-
 ### _À suivre: [Tableaux](./2-4_arrays.md)_
