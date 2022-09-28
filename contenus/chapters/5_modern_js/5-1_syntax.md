@@ -2,6 +2,75 @@
 
 > Écrire du JS neuf
 
+## Pour commencer
+
+### Séparateurs
+
+```js
+1_000_000_000; // au lieu de 1000000000
+```
+
+### Exponentiel
+
+```js
+2 ** 4; // 16
+```
+
+### Virgules qui trainent
+
+```js
+{
+  a: 1,
+  b: 2,
+}
+
+function (
+  arg1,
+  arg2,
+)
+
+[
+  1,
+  2,
+  3,
+]
+```
+
+### Template string literals
+
+```js
+const nom = 'Youpi';
+const prenom = 'Popo';
+const s = `Nom: ${nom} | Prénom: ${prenom}`
+```
+### Paramètres par défaut
+
+```js
+function (a, b = 0){}
+```
+
+### Optional Chaining
+
+```js
+a == null ? undefined : a.b;
+a?.b;
+
+a == null ? undefined : a[x];
+a?.[x];
+
+a == null ? undefined : a.b();
+a?.b();
+
+a == null ? undefined : a();
+a?.();
+```
+
+### Null coalescing
+
+```js
+const a = b || 1; // avant on faisait ça
+const a = b ?? 1; // renvoie 1 si b est null ou undefined, b sinon
+```
 
 ## Fonctions fléchées
 
@@ -41,19 +110,52 @@ const getObject = (a, b) => ({a, b}); // pour renvoyer directement un objet
 
 ## Spreading / Destructuring
 
-## Template string literals
+Pour les objets:
+
+```js
+const o = { a: 1, b: 2, c: 3, d: 4 };
+
+const { a, b, ...rest } = o;
+
+// a => 1
+// b => 2
+// rest => {c: 3, d:4}
+
+const o2 = { ...o }; // copie de o
+const o3 = { ...o, e: 5 }; // {a:1, b:2, c:3, d:4, e:5}
+```
+
+Pour les tableaux:
+
+```js
+const l = [1, 2, 3, 4, 5];
+
+const [a, b, ...leReste] = l; // a <= 1, leReste <= [2, 3]
+
+const l2 = [...l]; // crée une copie de l
+const l3 = [...l, ...l2]; // fusionne 2 listes
+```
 
 ## Classes
+
+Les `class` sont des fonctions en toile de fond, qui cherchent à mimer les classes de la Programmation Orientée Objet.
+
+```js
+class MyClass() {
+  constructor() {
+    this.a = 1
+    this.b = 2
+  }
+
+  myMethod() {
+    console.log(this.a)
+  }
+}
+```
 
 ## Et bien d'autres
 
 Un petit aperçu plus complet de ce qui est possible est disponible [ici](./5-X_es6%2B.md).
-
----
-
-## À retenir
-
-
 
 ---
 

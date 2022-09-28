@@ -188,7 +188,7 @@ const o = { a: 1, b: 2, c: 3, d: 4 };
 const { a, b, ...rest } = o;
 
 // a => 1
-// a => 2
+// b => 2
 // rest => {c: 3, d:4}
 
 const o2 = { ...o }; // copie de o

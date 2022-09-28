@@ -34,14 +34,14 @@ document.addEventListener(
         console.log('--- Question 4 ---');
         /* enrichir la fonction de la question 3 pour:
           - ajouter des infos d'auteur et de date
-          - ajouter des classes pourt styliser le texte, l'auteur, la date
+          - ajouter des classes pour styliser le texte, l'auteur, la date
           - ajouter un listener au mouseenter pour logguer l'id du tweet dans la console
         */
 
-        console.log('--- Question 4 ---');
+        console.log('--- Question 5 ---');
         /**
          * - utiliser l'input pour enregistrer le nom de la personne dans le localStorage
-         * - au chargement de la page, si le nom dans le localStorage existe, remplacer le h1 par "Bonjour {nom}"
+         * - au chargement de la page, si le nom dans le localStorage existe, remplacer le texte du h1 par "Bonjour {nom}"
          */
 
         console.log('--- BONUS ---');
