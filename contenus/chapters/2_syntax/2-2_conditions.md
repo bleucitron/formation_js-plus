@@ -70,3 +70,7 @@ if (x !== null && x !== undefined) {}
 // s'écrit souvent:
 if (x) {}
 ```
+
+---
+
+### _À suivre: [Fonctions](./2-3_functions.md)_

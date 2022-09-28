@@ -135,4 +135,4 @@ x = 0;
 
 ---
 
-#### _La suite: [Compter les valeurs](./1-3_count.md)_
+#### _La suite: [Compter les valeurs](./1-3_types.md)_
