@@ -1,4 +1,4 @@
-# [Syntaxes modernes]
+# Syntaxes modernes
 
 > Écrire du JS neuf
 
@@ -141,16 +141,18 @@ const l3 = [...l, ...l2]; // fusionne 2 listes
 Les `class` sont des fonctions en toile de fond, qui cherchent à mimer les classes de la Programmation Orientée Objet.
 
 ```js
-class MyClass() {
-  constructor() {
-    this.a = 1
-    this.b = 2
+class Humain {
+  constructor(name) {
+    this.name = name
   }
 
-  myMethod() {
-    console.log(this.a)
+  sayName() {
+    console.log(this.name)
   }
 }
+
+const moi = new Humain('Romain');
+moi.sayName();
 ```
 
 ## Et bien d'autres

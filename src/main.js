@@ -19,7 +19,7 @@ document.addEventListener(
 
         // [2] créer et ajouter un <ol> à la page, puis y ajouter les <li> de tweets en utilisant [1]
 
-        // [3] créer un <bouton> de filtre pour que quand on clique dessus, ne garde que les tweets en français à l'écran
+        // [3] créer un <button> de filtre pour que quand on clique dessus, ne garde que les tweets en français à l'écran
 
         // [4] modifier le bouton de filtre pour pouvoir réafficher tous les tweets quand on reclique dessus
 
