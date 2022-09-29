@@ -62,4 +62,4 @@ getStarWarsData();
 
 ---
 
-### _À suivre: [`fetch`](./4-4_more.md)_
+### _À suivre: [`Encore des promesses`](./4-4_more.md)_
