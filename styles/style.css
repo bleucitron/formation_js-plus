@@ -2,6 +2,7 @@ body {
   font-family: Helvetica;
   font-weight: lighter;
   height: 100vh;
+  padding: 1rem;
 }
 
 h1 {
@@ -18,4 +19,20 @@ h2 {
 
 .tweet {
   margin: 1rem;
+}
+
+.tweet .text {
+  font-size: 1.3rem;
+}
+
+.tweet .author {
+  color: grey;
+}
+
+.tweet .date {
+  font-style: italic;
+}
+
+p {
+  margin: 1rem 0;
 }

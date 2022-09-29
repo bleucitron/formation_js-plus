@@ -23,6 +23,24 @@ fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
      * - logguer un message d'erreur quand elle est rejetée
      */
 
+    const p = new Promise(function (resolve, reject) {
+      const n = Math.floor(Math.random() * 100);
+
+      setTimeout(function () {
+        if (n % 2 === 0) {
+          resolve(n);
+        } else {
+          reject(n);
+        }
+      }, 2000);
+    });
+
+    p.then(function (valeurPromise) {
+      console.log(tweets[valeurPromise].full_text);
+    }).catch(function (rejet) {
+      console.error(rejet, 'est impair');
+    });
+
     /**========================================================================
      *                           [Bonus] Attente incertaine
      *========================================================================**/
@@ -36,6 +54,33 @@ fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
      * 2) Consommez la Promesse de sorte que si elle est rejetée,
      * on recommence jusqu'à ce qu'elle résolve
      */
+
+    function retry() {
+      const p2 = new Promise(function (resolve, reject) {
+        const delay = Math.floor(Math.random() * 5000);
+
+        const t1 = setTimeout(() => {
+          clearTimeout(t2);
+          reject('Trop long...');
+        }, 2000);
+
+        const t2 = setTimeout(() => {
+          clearTimeout(t1);
+          resolve(delay);
+        }, delay);
+      });
+
+      p2.then(function (d) {
+        console.log('Delay', d);
+      }).catch(function (err) {
+        retry();
+        console.error(err);
+      });
+
+      console.log('COUCOU');
+    }
+
+    retry();
   })
   .catch(function (e) {
     console.error(e);
