@@ -44,31 +44,32 @@ Plusieurs types de frameworks sont disponibles:
 
 ## En pratique
 
-On va utiliser Vite.
+On va utiliser **Vitest**.
 
 ```bash
 npm i vitest -D
 ```
 
-> Ajouter `"test": "vitest"` dans vos `scripts` NPM
+> Ajouter `"test": "vitest run"` et `"test:watch": "vitest"` dans vos `scripts` NPM
 
 
 Lancer les tests.
 
 ```bash
-npm run test # ou npx vitest
+npm run test:watch # ou npx vitest
 ```
 
 Vitest va chercher tous les fichiers en `*.test.js`, et les exécuter.
 
 ```js
+import { describe, it, expect } from 'vitest';
 import maFonction from './maFonction.js';
 
 describe("la fonction que l'on veut tester", () => {
   it('ce que cette fonction doit faire dans un cas précis', () => {
     const maValeur = maFonction();
 
-    expect(maValeur).toBe(ceQuiEstAttendu); // chercher dans la doc de Jest
+    expect(maValeur).toBe(ceQuiEstAttendu); // d'autres possibilités dans la doc de Vitest
   });
 });
 ```
@@ -102,13 +103,13 @@ git add .husky/pre-commit
 
 **Lint-staged permet de n'exécuter des scripts que sur les fichiers en *staging***. Cela évite d'analyser ou tester tous vos fichiers si vous n'avez fait qu'une modification mineure.
 
-> Remplacer `npm test` par `lint-staged` dans votre `pre-commit` hook
+> Remplacer `npm test` par `npx lintstaged` dans votre `pre-commit` hook
 
 ```json
 // .lintstagedrc
 {
   "*": ["prettier --write"],
-  "*.js": ["eslint --fix", "vitest related"],
+  "*.js": ["eslint --fix", "vitest related --run"],
 }
 ```
 

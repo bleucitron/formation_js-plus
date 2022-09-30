@@ -12,8 +12,6 @@ npm init // initialise un projet NPM
 
 npm install // installe toutes les dépendances
 npm install uneDependance // installe uneDependance
-npm install uneDependance -g // installe uneDependance en global
-npm install uneDependance -D // installe uneDependance en dépendance de développement
 ```
 
 Les dépendances locales sont installées dans le dossier `node_modules`.
