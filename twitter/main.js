@@ -1,36 +1,36 @@
-import { createOl } from './createOl.js';
+import "./styles/reset.css";
+import "./styles/style.css";
+
+import { createOl } from "./src/createOl.js";
+import { isTweetFr } from "./src/utils";
 
 document.addEventListener(
-  'DOMContentLoaded',
+  "DOMContentLoaded",
   function () {
     fetch(
-      'https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json',
+      "https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json"
     )
       .then(function (resp) {
         return resp.json();
       })
       .then(function (tweets) {
-        console.log('Le tableau de tweet', tweets);
+        console.log("Le tableau de tweet", tweets);
 
         // ### Projet Touitter ###
 
         let displayedOl = createOl(tweets);
         document.body.append(displayedOl);
 
-        const filterButton = document.createElement('button');
-        filterButton.textContent = 'Filter';
+        const filterButton = document.createElement("button");
+        filterButton.textContent = "COUCOU";
         document.body.prepend(filterButton);
 
         let isFr = false;
 
-        filterButton.addEventListener('click', function () {
+        filterButton.addEventListener("click", function () {
           isFr = !isFr;
 
-          const tweetsToDisplay = isFr
-            ? tweets.filter(function (tweet) {
-                return tweet.lang === 'fr';
-              })
-            : tweets;
+          const tweetsToDisplay = isFr ? tweets.filter(isTweetFr) : tweets;
 
           const newOl = createOl(tweetsToDisplay);
 
@@ -70,5 +70,5 @@ document.addEventListener(
         console.error(e);
       });
   },
-  { once: true },
+  { once: true }
 );
