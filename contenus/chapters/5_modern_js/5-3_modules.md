@@ -63,8 +63,6 @@ export function maFonction() {
 };
 ```
 
-**Il ne peut y avoir qu'un seul `export default` par module.**
-
 ### [`import`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/import)
 
 On peut importer depuis un module natif ou installé, ou depuis les fichiers locaux du projet.
