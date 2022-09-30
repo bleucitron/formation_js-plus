@@ -123,4 +123,4 @@ Toutes les dépendances d'un script `"module"` seront directement importées en 
 </html>
 ```
 
-### _À suivre: [Bundling](../6_tooling/index.md)_
+### _À suivre: [Outillage](../6_tooling/index.md)_
