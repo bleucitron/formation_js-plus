@@ -123,4 +123,10 @@ Toutes les dépendances d'un script `"module"` seront directement importées en 
 </html>
 ```
 
+## Exercices
+
+- Ouvrir le dossier `/exos/5_modern_js/5-2_modules`
+- Ouvrir le fichier `index.html` dans votre navigateur
+- Suivre les indications du fichier `index.js`, et vérifier les résultats dans votre navigateur
+
 ### _À suivre: [Outillage](../6_tooling/index.md)_

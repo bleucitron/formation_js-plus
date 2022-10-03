@@ -37,10 +37,10 @@ fetch('https://raw.githubusercontent.com/iOiurson/data/master/data/tweets.json')
     console.log('--- Question 6 ---');
     // trouver le tweet qui parle de 'Moonlighter' en utilisant .find()
 
-    console.log('--- Question 7 ---');
+    console.log('--- Bonus 1 ---');
     // lister tous les textes de hashtags du premier tweet
 
-    console.log('--- BONUS ---');
+    console.log('--- Bonus 2 ---');
     // lister les tweets qui ont pour hashtag `coronadiary`
   })
   .catch(function (e) {

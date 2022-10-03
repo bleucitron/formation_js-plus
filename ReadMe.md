@@ -36,7 +36,6 @@
 
 ## 5. JS Moderne
 
-- #### [Retour vers le futur](./contenus/chapters/5_modern_js/5-0_back_to_the_future.md)
 - #### [Syntaxes](./contenus/chapters/5_modern_js/5-1_syntax.md)
 - #### [Scripts](./contenus/chapters/5_modern_js/5-2_scripts.md)
 - #### [Modules](./contenus/chapters/5_modern_js/5-3_modules.md)
@@ -45,6 +44,7 @@
 
 ## 6. Outillage
 
+- #### [Retour vers le futur](./contenus/chapters/6_tooling/6-0_back_to_the_future.md)
 - #### [Bundling](./contenus/chapters/6_tooling/6-1_bundling.md)
 - #### [DX](./contenus/chapters/6_tooling/6-2_dx.md)
 - #### [NPM](./contenus/chapters/6_tooling/6-3_npm.md)

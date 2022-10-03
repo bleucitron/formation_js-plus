@@ -44,7 +44,7 @@ document.addEventListener(
          * - au chargement de la page, si le nom dans le localStorage existe, remplacer le texte du h1 par "Bonjour {nom}"
          */
 
-        console.log('--- BONUS ---');
+        console.log('--- Bonus ---');
         // enrichir la fonction de la question 3 pour aussi afficher les hashtags de chaque tweet
       })
       .catch(function (e) {
