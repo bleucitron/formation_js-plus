@@ -1,8 +1,8 @@
 'use strict';
 
 function computeAge(birth, died) {
-  const now = new Date();
-  const then = new Date(date);
+  const end = died ? new Date(died) : new Date();
+  const start = new Date(birth);
 
-  return (now - then) / msToYear;
+  return (end - start) / msToYear;
 }
