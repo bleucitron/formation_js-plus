@@ -123,7 +123,7 @@ function clone(personne, nbAnnees) {
   console.log('Âge', personne.age);
   console.log('nbAnnees', nbAnnees);
 
-  if (!nbAnnee) {
+  if (!nbAnnees) {
     nbAnnees = 1;
   }
 
