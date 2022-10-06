@@ -169,4 +169,4 @@ Un petit aperçu plus complet de ce qui est possible est disponible [ici](./5-X_
 
 ---
 
-### _À suivre: [Modules](./5-2_scripts.md)_
+### _À suivre: [Scripts](./5-2_scripts.md)_
