@@ -105,11 +105,11 @@ git add .husky/pre-commit
 
 > Remplacer `npm test` par `npx lintstaged` dans votre `pre-commit` hook
 
+> Créer le fichier `.lintstagedrc` suivant:
+
 ```json
-// .lintstagedrc
 {
-  "*": ["prettier --write"],
-  "*.js": ["eslint --fix", "vitest related --run"],
+  "*.js": ["prettier --write", "eslint --fix", "vitest related --run"],
 }
 ```
 
