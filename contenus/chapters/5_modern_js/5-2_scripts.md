@@ -49,7 +49,7 @@ Il est intéressant d'utiliser `defer` lorsque vous avez besoin de conserver l'o
 
 Les scripts `async` seront donc chargés et exécutés en parallèle.
 
-Néanmoins, un script `async` s'éxecutera dès qu'il sera téléchargé, ce qui signifie que l'ordre des scripts ne sera pas garanti.
+Néanmoins, un script `async` s'exécutera dès qu'il sera téléchargé, ce qui signifie que l'ordre des scripts ne sera pas garanti.
 
 Il est intéressant d'utiliser `async` lorsque vous avez des scripts qui fonctionnent en autonomie, comme des scripts d'analytics par exemple.
 
