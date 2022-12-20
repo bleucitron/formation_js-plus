@@ -19,3 +19,15 @@ h2 {
 .tweet {
   margin: 1rem;
 }
+
+.text {
+  font-size: 1.5rem;
+}
+
+.author {
+  font-weight: bold;
+}
+
+.date {
+  font-style: italic;
+}
