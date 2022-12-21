@@ -15,6 +15,23 @@ console.log('*** GetJson ***');
  * https://swapi.dev/api/people/6/
  */
 
+// function getJSON(url) {
+//   return fetch(url).then(function (resp) {
+//     return resp.json();
+//   });
+// }
+
+async function getJSON(url) {
+  const resp = await fetch(url);
+  const data = await resp.json();
+
+  return data;
+}
+
+getJSON('https://swapi.dev/api/people/6/').then(data => {
+  console.log('DAta', data);
+});
+
 /**========================================================================
  *                          La rebellion
  *========================================================================**/
@@ -25,10 +42,23 @@ console.log('*** La rebellion ***');
  * et affichez leur données
  */
 
+const url = 'https://swapi.dev/api/people/';
+
+const numbers = [1, 2, 3, 4, 5];
+const ps = numbers.map(n => url + n).map(getJSON);
+
+Promise.all(ps).then(function (vp) {
+  console.log('VP', vp);
+  console.log(
+    'grands',
+    vp.filter(v => v.height > 150),
+  );
+});
+
 /**========================================================================
  *                          [Bonus] Medium
  *========================================================================**/
-console.log('*** [Bonus] Medium ***');
+https: console.log('*** [Bonus] Medium ***');
 
 /**
  * La fonction waitACertainTime crée une promesse similaire à celle de l'exercice 4-1: Bonus

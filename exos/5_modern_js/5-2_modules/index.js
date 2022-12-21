@@ -1,4 +1,9 @@
-'use strict';
+import theBeatles, { paul, john } from './beatles.js';
+import simonAndGarfunkel, {
+  paul as paulSimon,
+  art,
+} from './simon_garfunkel.js';
+import { computeAge } from './utils.js';
 
 /**
  * Reconstruire l'arbre de dépendances grâce aux modules
